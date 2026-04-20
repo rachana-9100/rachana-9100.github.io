@@ -103,6 +103,8 @@ section { padding: 100px 48px; }
 .project-card:nth-child(3)::before { background: var(--accent3); }
 .project-card:nth-child(4)::before { background: var(--accent2); }
 .project-card:nth-child(5)::before { background: var(--accent); }
+.project-card:nth-child(6)::before { background: var(--accent3); }
+.project-card:nth-child(7)::before { background: var(--accent2); }
 .project-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 12px; }
 .project-name { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
 .project-desc { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
@@ -553,6 +555,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--border); display: flex;
 .card-badge.recent { background: var(--accent3); }
 .card-badge.pharma { background: linear-gradient(var(--accent3), var(--accent)); }
 .card-badge.gov { background: var(--accent); }
+.card-badge.fintech { background: linear-gradient(135deg, #60a5fa, var(--accent)); }
 .card-header h3 {
   font-family: 'Syne', sans-serif;
   font-size: 24px;
@@ -683,7 +686,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      const navHeight = 80; // Adjust based on your nav padding
+      const navHeight = 80;
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
@@ -821,12 +824,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   <div class="ai-caption">AI-accelerated engineering workflow</div>
   <div class="ai-motion-wrap">
     <div class="ai-motion-row">
-      <span class="ai-chip">GitHub Copilot for Java & Spring Boot</span>
+      <span class="ai-chip">GitHub Copilot for Java &amp; Spring Boot</span>
       <span class="ai-chip">Prompt Engineering</span>
       <span class="ai-chip">Faster React component iteration with AI tooling</span>
       <span class="ai-chip">GitHub Copilot (AI pair programming)</span>
       <span class="ai-chip">LLM-assisted development workflows</span>
-      <span class="ai-chip">GitHub Copilot for Java & Spring Boot</span>
+      <span class="ai-chip">GitHub Copilot for Java &amp; Spring Boot</span>
       <span class="ai-chip">Faster React component iteration with AI tooling</span>
       <span class="ai-chip">Prompt Engineering</span>
       <span class="ai-chip">GitHub Copilot (AI pair programming)</span>
@@ -890,8 +893,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       </div>
     </div>
 
+    <!-- STIFEL — inserted between Centene and Aurobindo -->
     <div class="timeline-item">
       <div class="timeline-dot accent3"></div>
+      <div class="exp-card glass-card">
+        <div class="card-badge fintech">FinTech</div>
+        <div class="card-header">
+          <h3>Stifel Financial</h3>
+          <span class="role-badge">Investment Banking</span>
+          <span class="date-badge">Mar 2023 – Apr 2024</span>
+        </div>
+        <p>Led React 18 migration of legacy trading dashboards; built Kafka pipelines for real-time market data and decomposed monolithic brokerage backend into Spring Boot microservices on Azure AKS</p>
+        <div class="impact-metrics">
+          <span>35% Bundle ↓</span>
+          <span>500K Events/day</span>
+          <span>99.95% Uptime</span>
+          <span>SOC 2 Hardened</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot accent"></div>
       <div class="exp-card glass-card">
         <div class="card-badge pharma">Pharma</div>
         <div class="card-header">
@@ -925,6 +948,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     </div>
   </div>
 </section>
+
 <section id="projects">
   <div class="section-header">
     <span class="section-num">03</span>
@@ -955,7 +979,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     <div class="project-card">
       <div class="project-num">PROJECT / 03</div>
-      <div class="project-name">CI/CD & Observability Pipeline</div>
+      <div class="project-name">CI/CD &amp; Observability Pipeline</div>
       <div class="project-desc">Automated full deployment pipeline with Jenkins and Docker, integrated Datadog APM for real-time tracing and alerting.</div>
       <div class="project-impact">50% Manual ↓ · 45% MTTR ↓ · SonarQube Gates</div>
       <div class="project-tags">
@@ -973,8 +997,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       </div>
     </div>
 
+    <!-- STIFEL PROJECT — inserted as PROJECT / 05 -->
     <div class="project-card">
       <div class="project-num">PROJECT / 05</div>
+      <div class="project-name">Real-Time Trading Platform Modernization</div>
+      <div class="project-desc">Migrated legacy JSP/jQuery brokerage dashboards to React 18 + TypeScript; built Kafka market-data pipelines and decomposed monolith into 6 Spring Boot microservices on Azure AKS with Redis caching and SOC 2 security hardening.</div>
+      <div class="project-impact">35% Bundle ↓ · 500K Events/day · 99.95% Uptime · 2-week → 3-day releases</div>
+      <div class="project-tags">
+        <span class="project-tag">React 18</span><span class="project-tag">Apache Kafka</span><span class="project-tag">Azure AKS</span><span class="project-tag">Spring Boot</span><span class="project-tag">Redis</span><span class="project-tag">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">PROJECT / 06</div>
       <div class="project-name">Pharma Workflow System</div>
       <div class="project-desc">Full-stack pharma app on PCF using Spring Boot + Hibernate with SOAP/REST integrations and MySQL batch pipelines.</div>
       <div class="project-impact">PCF Deploy · SOAP/REST ETL · 15% Cost ↓</div>
@@ -984,7 +1019,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     </div>
 
     <div class="project-card">
-      <div class="project-num">PROJECT / 06</div>
+      <div class="project-num">PROJECT / 07</div>
       <div class="project-name">GovTech Big Data Portal</div>
       <div class="project-desc">Built citizen-facing government portals with Spark + Scala data pipelines and serverless AWS backends for scale.</div>
       <div class="project-impact">Spark + Scala · AWS Serverless · 30% Optimization ↑</div>
@@ -1023,7 +1058,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       <div class="edu-location">St. Louis, Missouri, USA</div>
     </div>
     <div class="edu-card">
-      <div class="edu-degree">Bachelor of Technology<br>Computer Science & Engineering</div>
+      <div class="edu-degree">Bachelor of Technology<br>Computer Science &amp; Engineering</div>
       <div class="edu-school">Malla Reddy College of Engineering</div>
       <div class="edu-location">Hyderabad, India</div>
     </div>
@@ -1047,7 +1082,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         <div class="contact-link-icon">✉️</div>
         <div><div class="contact-link-label">Email</div><div class="contact-link-value">rachanam646@gmail.com</div></div>
       </a>
-      <a href="tel:3.14312079e+09" class="contact-link">
+      <a href="tel:3143120790" class="contact-link">
         <div class="contact-link-icon">📞</div>
         <div><div class="contact-link-label">Phone</div><div class="contact-link-value">314-312-0790</div></div>
       </a>
@@ -1055,18 +1090,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         <div class="contact-link-icon">in</div>
         <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">linkedin.com/in/rachana-m0</div></div>
       </a>
-<a href="https://medium.com/@rachanam646" target="_blank" class="contact-link">
-  <div class="contact-link-icon">M</div>
-  <div>
-    <div class="contact-link-label">Medium</div>
-    <div class="contact-link-value">medium.com/@rachanam646</div>
-  </div>
-</a>
+      <a href="https://medium.com/@rachanam646" target="_blank" class="contact-link">
+        <div class="contact-link-icon">M</div>
+        <div>
+          <div class="contact-link-label">Medium</div>
+          <div class="contact-link-value">medium.com/@rachanam646</div>
+        </div>
+      </a>
       <a href="https://github.com/rachana-9100" target="_blank" class="contact-link">
         <div class="contact-link-icon">⌥</div>
         <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">github.com/rachana-9100</div></div>
       </a>
-    </div></div>
+    </div>
   </div>
 </section>
 
@@ -1074,7 +1109,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   <span>© 2026 Rachana M. All rights reserved.</span>
   <span>Java Full Stack Engineer · AWS · Apache Iceberg · Kafka</span>
 </footer>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
